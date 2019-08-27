@@ -8,6 +8,6 @@ node{
   }
 
   stage('upload'){
-    s3Upload(file:'dockerfile.txt', bucket:'jenkinsawscd', path:'./')
+    s3Upload(file:'.', bucket:'jenkinsawscd', path:'./')
   }
 }
