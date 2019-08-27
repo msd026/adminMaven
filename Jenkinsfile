@@ -8,7 +8,7 @@ node{
   }
 
   stage('archiving'){
-    archiveArtifacts artifacts: 'build/*.jar'
+    archiveArtifacts artifacts: '*.jar'
   }
   stage('upload'){
     s3Upload(file:'/job/LMS/12/execution/node/3/ws/dockerfile.txt', bucket:'jenkinsawscd', path:'./')
