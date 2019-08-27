@@ -4,7 +4,7 @@ node{
   }   
 
   stage('run Maven'){
-  script: 'mvn clean package'
+  sh label: '', script: 'mvn clean package'
   }
 
   stage('archiving'){
