@@ -1,6 +1,6 @@
 node{
   stage('Checkout'){
-    git 'https://github.com/msd026/LMS-API'
+    git 'https://github.com/msd026/adminMaven'
   }   
 
   
