@@ -4,11 +4,7 @@ node{
   }   
 
   stage('run Maven'){
-    sh label: '', script: '''wget https://www-eu.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
-export MAVEN_HOME=/opt/maven
-export PATH=$PATH:$MAVEN_HOME/bin
-mvn --version
-mvn clean package'''
+    sh label: '', script: 'java -version'
   }
 
   stage('archiving'){
