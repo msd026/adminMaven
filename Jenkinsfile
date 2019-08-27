@@ -8,6 +8,6 @@ node{
   }
 
   stage('upload'){
-    s3Upload(file:'*.jar', bucket:'jenkinsawscd', path:'*.jar')
+    s3Upload(file:'dockerfile', bucket:'jenkinsawscd', path:'./')
   }
 }
