@@ -8,6 +8,6 @@ node{
   }
 
   stage('upload'){
-  s3Upload consoleLogLevel: 'INFO', dontWaitForConcurrentBuildCompletion: false, pluginFailureResultConstraint: 'FAILURE', profileName: 'jenkins', userMetadata: []
+    s3Upload(file:'*.jar', bucket:'jenkinsawscd', path:'*.jar')
   }
 }
