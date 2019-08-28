@@ -3,14 +3,6 @@ node{
     git 'https://github.com/msd026/adminMaven'
   }   
 
-  stage('Run Maven'){
-    sh label: '', script: '''
-    export MAVEN_HOME=/opt/maven
-    export PATH=$PATH:$MAVEN_HOME/bin
-    mvn --version
-    mvn clean package'''
-  }
-
   stage('Archiving'){
     archiveArtifacts artifacts: 'target/admin-0.0.1-SNAPSHOT.jar'
   }  
