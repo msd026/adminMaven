@@ -4,7 +4,7 @@ node{
   }   
     
   stage('Run Maven'){
-    sh label: '', script: '''
+    sh label: '', script: ''' 
     export MAVEN_HOME=/opt/maven
     export PATH=$PATH:$MAVEN_HOME/bin
     mvn --version
