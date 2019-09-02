@@ -2,7 +2,7 @@ node{
   stage('Checkout'){
     git 'https://github.com/msd026/adminMaven'
   }   
-  
+   
   stage('Run Maven'){
     sh label: '', script: '''
     export MAVEN_HOME=/opt/maven
