@@ -16,12 +16,12 @@ node{
   }  
   
   stage('download playbook'){
-    s3Download bucket: 'jenkinsawscd', file: 'playboy.yaml', path: 'ansible/'
+    s3Download bucket: 'jenkinsawscd', file: 'playboy.yaml', force: true, path: 'ansible/'
   }
   
   stage('download inventory'){
-    s3Download bucket: 'jenkinsawscd', file: 'hosts', path: 'ansible/'
-    s3Download bucket: 'jenkinsawscd', file: 'ansible.cfg', path: 'ansible/'    
+    s3Download bucket: 'jenkinsawscd', file: 'hosts', force: true, path: 'ansible/'
+    s3Download bucket: 'jenkinsawscd', file: 'ansible.cfg', force: true, path: 'ansible/'    
   }
   
   stage('connect to jenkins'){
