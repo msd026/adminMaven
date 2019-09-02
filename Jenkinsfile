@@ -15,6 +15,10 @@ node{
     archiveArtifacts artifacts: 'target/admin-0.0.1-SNAPSHOT.jar'
   }  
   
+  stage('download playbook'){
+    s3Download bucket: 'jenkinsawscd', file: 'playboy.yaml', path: 'ansible/'
+  }
+  
   stage('connect to jenkins'){
    ansiblePlaybook inventory: '/home/msd026/Downloads/ansible/platform/hosts', playbook: '/home/msd026/Downloads/ansible/platform/playboy.yaml'
   }
