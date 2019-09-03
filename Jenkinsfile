@@ -23,13 +23,13 @@ node{
     s3Download bucket: 'jenkinsawscd', file: 'hosts', force: true, path: 'ansible/'
     s3Download bucket: 'jenkinsawscd', file: 'ansible.cfg', force: true, path: 'ansible/'    
   }
-  
-  stage('connect to jenkins'){
-   ansiblePlaybook inventory: '/home/msd026/Downloads/ansible/platform/hosts', playbook: '/home/msd026/Downloads/ansible/platform/playboy.yaml'
+ 
+  stage ('ansible'){
+    ansiblePlaybook installation: 'ansible-2.2.1.0', inventory: '/hosts/ansible/hosts', playbook: '/hosts/ansible/playboy.yaml'
   }
   
-  stage('Upload'){
-    s3Upload consoleLogLevel: 'INFO', dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'jenkinsawscd/jenkinsfile', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'us-east-1', showDirectlyInBrowser: false, sourceFile: 'target/*.jar', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'jenkins', userMetadata: []  
-  } 
+  stage('Run Cloud Formation'){
+    sh label: '', script: 'ansible-playbook /hosts/ansible/playboy.yaml'
+  }
 
 }
