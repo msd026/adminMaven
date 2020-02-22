@@ -2,6 +2,18 @@ node{
   stage('Checkout'){
     git 'https://github.com/msd026/adminMaven'
   }   
+  
+   agent any
+    tools {
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
+    }
+  
+   stage ('Initialize') {
+            echo "PATH = ${PATH}"
+            echo "M2_HOME = ${M2_HOME}
+        }
+  
     
   stage('Run Maven'){
     sh label: '', script: ''' 
