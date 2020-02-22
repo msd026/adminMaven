@@ -1,5 +1,5 @@
 node{
-  stage('Checkout'){
+  stage('Checkoutgit'){
     git 'https://github.com/msd026/adminMaven'
   }   
   
