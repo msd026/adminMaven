@@ -1,13 +1,7 @@
 node{
   stage('Checkoutgit'){
     git 'https://github.com/msd026/adminMaven'
-  }   
-  
-  stage ('Initialize') {
-            echo "PATH = ${PATH}"
-            echo "M2_HOME = ${M2_HOME}
-        }
-  
+  } 
     
   stage('Run Maven'){
     sh label: '', script: ''' 
