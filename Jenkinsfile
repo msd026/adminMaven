@@ -4,11 +4,12 @@ node{
   } 
     
   stage('Run Maven'){
-    bat label: '', script: ''' 
+   // bat label: '', script: ''' 
     //export MAVEN_HOME=/opt/maven
    // export PATH=$PATH:$MAVEN_HOME/bin
-    mvn --version
-    mvn clean package'''
+   // mvn --version
+   // mvn clean package'''
+    bat'mvn clean compile'
   }
 
   stage('Archiving'){
