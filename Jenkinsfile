@@ -16,6 +16,17 @@ node{
     archiveArtifacts artifacts: 'target/admin-0.0.1-SNAPSHOT.jar'
   }  
   
+stage('Sonarqube analysis') {
+    steps {
+      script {
+             scannerHome = tool 'SonarScanner';
+          }
+     withSonarQubeEnv('SonarQube') {
+         bat "${scannerHome}/bin/sonar-scanner.bat" 
+     }
+
+   }
+}
   //stage('download playbook'){
    // s3Download bucket: 'jenkinsawscd', file: 'playboy.yaml', force: true, path: 'ansible/'
   //}
