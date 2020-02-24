@@ -35,7 +35,7 @@ stage('Sonarqube analysis') {
    // s3Download bucket: 'jenkinsawscd', file: 'hosts', force: true, path: 'ansible/'
    // s3Download bucket: 'jenkinsawscd', file: 'ansible.cfg', force: true, path: 'ansible/'    
   //}
- 
+  
   //stage ('ansible'){
   //  ansiblePlaybook installation: 'ansible-2.2.1.0', inventory: '/hosts/ansible/hosts', playbook: '/hosts/ansible/playboy.yaml'
   //}
