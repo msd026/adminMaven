@@ -9,7 +9,7 @@ node{
    // export PATH=$PATH:$MAVEN_HOME/bin
    // mvn --version
    // mvn clean package''' 
-    bat'mvn clean compile'
+    bat'mvn clean package'
   }
 
   stage('Archiving'){
