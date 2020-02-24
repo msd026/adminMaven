@@ -1,7 +1,7 @@
 node{
   stage('Checkoutgit'){
     git 'https://github.com/msd026/adminMaven'
-  } 
+  }  
     
   stage('Run Maven'){
    // bat label: '', script: ''' 
