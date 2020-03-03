@@ -8,6 +8,7 @@ node{
     export PATH=$PATH:$MAVEN_HOME/bin
     mvn --version
     mvn clean package'''
+    
     //bat'mvn clean package'
   }
 
