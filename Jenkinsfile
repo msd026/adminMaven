@@ -4,12 +4,11 @@ node{
   }  
     
   stage('Run Maven'){
-   // bat label: '', script: ''' 
-    //export MAVEN_HOME=/opt/maven 
-   // export PATH=$PATH:$MAVEN_HOME/bin
-   // mvn --version
-   // mvn clean package''' 
-    bat'mvn clean package'
+  sh label: '', script: '''export MAVEN_HOME=/opt/maven 
+    export PATH=$PATH:$MAVEN_HOME/bin
+    mvn --version
+    mvn clean package'''
+    //bat'mvn clean package'
   }
 
   stage('Archiving'){
@@ -17,16 +16,11 @@ node{
   }  
   
   
-stage('Sonarqube analysis') {
-    steps {
-      script {
-             scannerHome = tool 'SonarScanner';
-          }
-     withSonarQubeEnv('SonarQube') {
-         bat "${scannerHome}/bin/sonar-scanner.bat" 
-     }
-   }
-}
+  agent{
+    dockerfile true
+  }
+  
+    
   //stage('download playbook'){
    // s3Download bucket: 'jenkinsawscd', file: 'playboy.yaml', force: true, path: 'ansible/'
   //}
