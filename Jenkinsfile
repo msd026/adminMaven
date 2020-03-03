@@ -19,7 +19,7 @@ node{
   agent{
     dockerfile true
   }
-  
+ 
     
   //stage('download playbook'){
    // s3Download bucket: 'jenkinsawscd', file: 'playboy.yaml', force: true, path: 'ansible/'
