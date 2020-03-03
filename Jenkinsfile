@@ -16,6 +16,7 @@ node{
     archiveArtifacts artifacts: 'target/admin-0.0.1-SNAPSHOT.jar'
   }  
   
+  
 stage('Sonarqube analysis') {
     steps {
       script {
