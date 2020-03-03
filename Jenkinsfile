@@ -25,7 +25,6 @@ stage('Sonarqube analysis') {
      withSonarQubeEnv('SonarQube') {
          bat "${scannerHome}/bin/sonar-scanner.bat" 
      }
-
    }
 }
   //stage('download playbook'){
